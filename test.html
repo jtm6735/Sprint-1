@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8 />
+<title>Test</title>
+</head>
+<body>
+<canvas id="canvas" width="800" height="600"></canvas>
+<script type="text/javascript">
+
+var ctx = document.getElementById('canvas').getContext('2d');
+var play = setInterval('Rotate()',16);
+var i = 0;
+    
+var speed;
+var mouseX;
+var mouseY;
+    
+ctx.translate(ctx.width / 2, ctx.height / 2);
+var image1 = new Image();
+var image2 = new Image();
+var image3 = new Image();
+var image4 = new Image();
+var kaleidBG = new Image();
+image1.src = 'pidby.png';
+image2.src = 'pidby.png';
+image3.src = 'pidby.png';
+image4.src = 'pidby.png';
+kaleidBG.src = 'kaleidBG.png';
+
+function Rotate() {
+    /*
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0,0,800,600);
+    */
+    
+    ctx.drawImage(kaleidBG,0,0);
+    
+    ctx.save();
+    ctx.translate(400, 300);
+    
+    getMousePos();
+    speed = ((mouseX + mouseY) / 2);
+    ctx.rotate(i / speed / 5 * Math.PI);
+    ctx.drawImage(image1, 0, 0);
+    ctx.drawImage(image2, -400, 0);
+    ctx.drawImage(image3, -400, -300);
+    ctx.drawImage(image4, 0, -300);
+    
+    /*
+    ctx.fillStyle = 'red';
+    ctx.globalAlpha = 0.2;
+    ctx.fillRect(-700,-500,2000,2000);
+    ctx.globalAlpha = 1;
+    */
+    mouseFilters(ctx);
+    
+    ctx.restore();
+    i += 5;
+};
+    
+function getMousePos(){
+    window.addEventListener('mousemove', function(m){
+        mouseX = m.x;
+        mouseY = m.y;
+    });
+}
+
+function mouseFilters(ctx){
+    getMousePos();
+    if(mouseX <= 400){
+        ctx.fillStyle = 'red';
+        ctx.globalAlpha = 0.2;
+        ctx.fillRect(-700,-500,2000,2000);
+        ctx.globalAlpha = 1;
+        console.log('red');
+    }
+}    
+    
+</script>
+</body>
+</html>
