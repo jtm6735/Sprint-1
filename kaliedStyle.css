@@ -10,6 +10,8 @@ button{
     display: inline-block;
     border-radius: 0.5em;
     color: #fff;
+    width: 90%;
+    height: 60px
     
 }
 
