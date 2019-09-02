@@ -68,12 +68,29 @@ function getMousePos(){
 
 function mouseFilters(ctx){
     getMousePos();
-    if(mouseX <= 400){
+    if(mouseX <= 400 && mouseY >= 400){
         ctx.fillStyle = 'red';
         ctx.globalAlpha = 0.2;
         ctx.fillRect(-700,-500,2000,2000);
         ctx.globalAlpha = 1;
         console.log('red');
+    }
+    else if(mouseX >= 400 && mouseY <= 400){
+        ctx.fillStyle = 'green';
+        ctx.globalAlpha = 0.2;
+        ctx.fillRect(-700,-500,2000,2000);
+        ctx.globalAlpha = 1;
+        console.log('green');
+    }
+    else if(mouseX >= 400 && mouseY >= 400){
+        ctx.fillStyle = 'blue';
+        ctx.globalAlpha = 0.2;
+        ctx.fillRect(-700,-500,2000,2000);
+        ctx.globalAlpha = 1;
+        console.log('blue');
+    }
+    else{
+        console.log('no filter');
     }
 }    
     
