@@ -10,17 +10,17 @@
     
     <div id="buttonSide">
         <div class="sepButton">
-            <button onclick="mouseFilters(ctx)">Filter Button</button>
+            <button onclick="mouseFilters(ctx)">Button</button>
         </div>
         
         
         <div class="sepButton">
-            <button onclick="mouseFilters(ctx)">Another Filter Button</button>
+            <button onclick="mouseFilters(ctx)">Another Button</button>
         </div>
         
         
         <div class="sepButton">
-            <button onclick="mouseFilters(ctx)">Yet Another Filter Button</button>
+            <button onclick="mouseFilters(ctx)">Yet Another Button</button>
         </div>
         
     </div>
@@ -44,10 +44,10 @@ var image2 = new Image();
 var image3 = new Image();
 var image4 = new Image();
 var kaleidBG = new Image();
-image1.src = 'pidby.png';
-image2.src = 'pidby.png';
-image3.src = 'pidby.png';
-image4.src = 'pidby.png';
+image1.src = 'spinnyKalied.jpg';
+image2.src = 'spinnyKalied.jpg';
+image3.src = 'spinnyKalied.jpg';
+image4.src = 'spinnyKalied.jpg';
 kaleidBG.src = 'spinnyKalied.jpg';
 
 function Rotate() {
@@ -68,7 +68,7 @@ function Rotate() {
     ctx.rotate(i / speed / 5 * Math.PI);
     //ctx.drawImage(kaleidBG,0,0);
     ctx.fillStyle = '#000';
-    ctx.fillRect(-400,-300,800,600);
+    //ctx.fillRect(-400,-300,800,600);
     ctx.drawImage(image1, 0, 0);
     ctx.drawImage(image2, -400, 0);
     ctx.drawImage(image3, -400, -300);
