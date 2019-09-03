@@ -6,13 +6,25 @@ button{
     background-color: #40444d;
     border: none;
     padding: 12px 24px;
+    display: inline-block;
+    border-radius: 0.5em;
+    color: #fff;
+    width: 90%;
+    height: 60px;
+    text-align:left;
+}
+
+input{
+    background-color: #40444d;
+    border: none;
+    padding: 12px 24px;
     text-align: center;
     display: inline-block;
     border-radius: 0.5em;
     color: #fff;
     width: 90%;
-    height: 60px
-    
+    height: 60px;
+    text-align:center;
 }
 
 #canvas{
