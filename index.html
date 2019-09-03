@@ -11,19 +11,19 @@
     <div id="buttonSide">
         
         <div class="sepButton">
-            <button onclick="mouseFilters(ctx)">Add Image</button>
-        </div>
-        
-        <div class="sepButton">
-            <button onclick="mouseFilters(ctx)">Delete Image</button>
-        </div>
-        
-        <div class="sepButton">
             <Input id = default type = file onclick="mouseFilters(ctx)">Change Default Image</Input>
         </div>
         
         <div class="sepButton">
+            <button onclick="mouseFilters(ctx)">Add Image</button>
+        </div>
+        
+        <div class="sepButton">
             <button id = download onclick="mouseFilters(ctx)">Download Image</button>
+        </div>
+        
+        <div class="sepButton">
+            <button id = restart>Restart Program</button>
         </div>
         
     </div>
@@ -183,6 +183,10 @@ document.querySelector('#default').onclick = function(e){
         image.src = e.target.result;
     }
     reader.readAsDataURL(e.target.files[0]);   
+}
+
+document.querySelector('#restart').onclick = function(){
+    window.location.reload(true);
 }
 
 </script>
